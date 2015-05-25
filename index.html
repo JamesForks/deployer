@@ -112,9 +112,13 @@ $ gulp --production # Compile the assets
 $ gulp copy # This is needed to get the fonts needed by bootstrap in the correct place
 </code></pre>
 
-<p><strong>Start the queue listener</strong></p>
+<p><strong>Start the queue listener (see supervisor.conf.example for a supervisord config)</strong></p>
 
 <pre><code>$ php artisan queue:listen --queue=default,deploy,connections,notify --timeout=0 --tries=1
 </code></pre>
+
+<p><strong>Setup a cronjob (see crontab.example)</strong</p>
+<pre><code>
+* * * * * root php /var/www/deployer/artisan schedule:run 1>> /dev/null 2>&1</code></pre>
 
 <p>Finally visit the site to login, the default login is <code>admin@example.com</code> with the password <code>password</code></p>
