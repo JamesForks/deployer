@@ -75,6 +75,10 @@ layout: default
 <pre><code>$ git checkout 0.0.12
 </code></pre>
 
+<p><strong>Install dependencies</strong></p>
+
+<pre><code>$ composer install</code></pre>
+
 <p><strong>Setup config</strong></p>
 
 <pre><code>$ cp .env.example .env
@@ -86,13 +90,9 @@ $ editor .env
 <pre><code>APP_ENV=production
 APP_URL=http://deploy.app
 APP_DEBUG=false
-APP_KEY=cJKwSTJFF75DK29ecw72ZRrkS6D0tqHy
+APP_KEY=cJKwSTJFF75DK29ecw72ZRrkS6D0tqHy # Can be generated with php artisan key:generate
 QUEUE_DRIVER=beanstalkd
 </code></pre>
-
-<p><strong>Install dependencies</strong></p>
-
-<pre><code>$ composer install</code></pre>
 
 <p><strong>Setup the database</strong></p>
 
