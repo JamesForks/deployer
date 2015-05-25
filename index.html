@@ -72,7 +72,7 @@ layout: default
 
 
 <p><strong>Checkout the latest release</strong></p>
-<pre><code>$ git checkout 0.0.11
+<pre><code>$ git checkout 0.0.12
 </code></pre>
 
 <p><strong>Setup config</strong></p>
@@ -92,10 +92,7 @@ QUEUE_DRIVER=beanstalkd
 
 <p><strong>Install dependencies</strong></p>
 
-<pre><code>$ composer install
-$ npm install
-$ bower install
-</code></pre>
+<pre><code>$ composer install</code></pre>
 
 <p><strong>Setup the database</strong></p>
 
@@ -104,9 +101,10 @@ $ php artisan migrate:install
 $ php artisan migrate
 </code></pre>
 
-<p><strong>Compile the assets</strong></p>
-
-<pre><code>$ gulp --production
+<p><strong>If not using a release</strong></p>
+<pre><code>$ npm install
+$ bower install
+$ gulp --production # Compile the asset
 $ gulp copy # This is needed to get the fonts needed by bootstrap in the correct place
 </code></pre>
 
