@@ -114,7 +114,7 @@ $ gulp copy # This is needed to get the fonts needed by bootstrap in the correct
 
 <p><strong>Start the queue listener (see supervisor.conf.example for a supervisord config)</strong></p>
 
-<pre><code>$ php artisan queue:listen --queue=default,deploy,connections,notify --timeout=0 --tries=1
+<pre><code>$ php artisan queue:listen --timeout=0 --tries=1
 </code></pre>
 
 <p><strong>Setup a cronjob (see crontab.example)</strong</p>
