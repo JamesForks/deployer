@@ -59,13 +59,14 @@ layout: default
   <li>PHP Tokenizer extension</li>
   <li>PHP Json extension (normally built in)</li>
   <li>beanstalkd</li>
+  <li>redis</li>
   <li>composer</li>
+  <li>node</li>
 </ul>
 
 <p>If you are not using a release version you will also need</p>
 <ul>
   <li>bower</li>
-  <li>node</li>
   <li>gulp</li>
 </ul>
 
@@ -113,8 +114,11 @@ $ gulp copy # This is needed to get the fonts needed by bootstrap in the correct
 
 <p><strong>Start the queue listener (see supervisor.conf.example for a supervisord config)</strong></p>
 
-<pre><code>$ php artisan queue:listen --timeout=0 --tries=1
-</code></pre>
+<pre><code>$ php artisan queue:listen --timeout=0 --tries=1</code></pre>
+
+<p><strong>Start the node server</strong></p>
+
+<pre><code>$ node socket.js</code></pre>
 
 <p><strong>Setup a cronjob (see crontab.example)</strong</p>
 <pre><code>
