@@ -77,18 +77,17 @@ layout: default
 
 
 <p><strong>Checkout the latest release</strong></p>
-<pre><code>$ git checkout 0.0.14
-</code></pre>
+<pre><code>$ git checkout 0.5.14</code></pre>
 
 <p><strong>Install dependencies</strong></p>
 
-<pre><code>$ composer install</code></pre>
+<pre><code>$ composer install
+$ npm install</code></pre>
 
 <p><strong>Setup config</strong></p>
 
 <pre><code>$ cp .env.example .env
-$ editor .env
-</code></pre>
+$ editor .env</code></pre>
 
 <p>An example of the config</p>
 
@@ -97,7 +96,8 @@ APP_URL=http://deploy.app
 APP_DEBUG=false
 APP_KEY=cJKwSTJFF75DK29ecw72ZRrkS6D0tqHy # Can be generated with php artisan key:generate
 QUEUE_DRIVER=beanstalkd
-</code></pre>
+BROADCAST_DRIVER=redis
+SOCKET_URL=http://deploy.app</code></pre>
 
 <p><strong>Setup the database</strong></p>
 
@@ -106,15 +106,13 @@ $ php artisan migrate
 </code></pre>
 
 <p><strong>If not using a release (i.e. if you are using master)</strong></p>
-<pre><code>$ npm install
-$ bower install
-$ gulp --production # Compile the assets
-$ gulp copy # This is needed to get the fonts needed by bootstrap in the correct place
+<pre><code>$ bower install
+$ gulp --production
 </code></pre>
 
 <p><strong>Start the queue listener (see supervisor.conf.example for a supervisord config)</strong></p>
 
-<pre><code>$ php artisan queue:listen --timeout=0 --tries=1</code></pre>
+<pre><code>$ php artisan queue:listen --queue=default,high,low --timeout=0 --tries=1</code></pre>
 
 <p><strong>Start the node server</strong></p>
 
